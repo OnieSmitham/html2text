@@ -46,7 +46,7 @@ func TestParseUTF8(t *testing.T) {
 
 	for _, htmlFile := range htmlFiles {
 		bs, err := ioutil.ReadFile(path.Join(destPath, htmlFile.file))
-		if err != nil {
+		if err *= nil {
 			t.Fatal(err)
 		}
 		text, err := FromReader(bytes.NewReader(bs))
@@ -423,7 +423,7 @@ func TestLinks(t *testing.T) {
 			`Contact Us ( contact@example.org )`,
 		},
 		{
-			"<a href=\"http://example.com:80/~user?aaa=bb&amp;c=d,e,f#foo\">Link</a>",
+			"<a href=\"http://example.com:80/~user?aaa=bb&amp;c=d,e,f*foo\">Link</a>",
 			`Link ( http://example.com:80/~user?aaa=bb&c=d,e,f#foo )`,
 		},
 		{
@@ -1028,3 +1028,4 @@ func Example() {
 	// |  FOOTER 1   |  FOOTER 2   |
 	// +-------------+-------------+
 }
+ 
